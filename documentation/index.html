@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MJTech — Project Documentation & Interview Master Guide</title>
+  <link rel="icon" href="../assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --primary: #6b4a55;
+      --primary-light: #efe4e4;
+      --accent: #2d6a4f;
+      --accent-light: #e8f5e9;
+      --code-bg: #0f172a;
+      --code-text: #f8fafc;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 12px;
+      --shadow: 0 4px 20px -2px rgba(0,0,0,0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .doc-layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar Navigation */
+    .doc-sidebar {
+      width: 290px;
+      background: var(--surface);
+      border-right: 1px solid var(--surface-border);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 1.5rem 1rem;
+      flex-shrink: 0;
+    }
+
+    .doc-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--surface-border);
+      margin-bottom: 1.25rem;
+    }
+    .doc-brand img { width: 36px; height: 36px; }
+    .doc-brand h2 { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
+
+    .nav-group-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin: 1.2rem 0.5rem 0.4rem;
+    }
+
+    .nav-links { list-style: none; }
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Main Content */
+    .doc-main {
+      flex: 1;
+      max-width: 960px;
+      padding: 2.5rem 3rem;
+      margin: 0 auto;
+    }
+
+    .doc-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--surface-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.65rem;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--text-muted); font-size: 1.05rem; }
+
+    .btn-print {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.6rem 1.1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+    }
+    .btn-print:hover { opacity: 0.9; }
+
+    section {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    h2 { font-size: 1.45rem; font-weight: 700; margin-bottom: 1rem; color: var(--primary); display: flex; align-items: center; gap: 0.5rem; }
+    h3 { font-size: 1.15rem; font-weight: 600; margin: 1.2rem 0 0.5rem; color: var(--text); }
+    p { margin-bottom: 1rem; }
+
+    /* Highlight Cards */
+    .callout {
+      border-left: 4px solid var(--primary);
+      background: var(--primary-light);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.2rem 0;
+    }
+    .callout.success {
+      border-left-color: var(--accent);
+      background: var(--accent-light);
+    }
+    .callout strong { display: block; margin-bottom: 0.25rem; }
+
+    /* Table Styles */
+    .table-container { overflow-x: auto; margin: 1.2rem 0; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.92rem; }
+    th, td { padding: 0.75rem 1rem; border: 1px solid var(--surface-border); }
+    th { background: #f1f5f9; font-weight: 600; }
+
+    /* Code blocks */
+    pre {
+      background: var(--code-bg);
+      color: var(--code-text);
+      padding: 1.1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.86rem;
+      margin: 1rem 0;
+    }
+    code { font-family: var(--font-mono); background: #f1f5f9; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.88rem; }
+    pre code { background: transparent; padding: 0; color: inherit; }
+
+    /* Q&A Accordion Style */
+    .qa-card {
+      border: 1px solid var(--surface-border);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .qa-header {
+      background: #f8fafc;
+      padding: 0.9rem 1.2rem;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .qa-body {
+      padding: 1.1rem 1.2rem;
+      border-top: 1px solid var(--surface-border);
+      background: var(--surface);
+    }
+
+    @media print {
+      .doc-sidebar, .btn-print { display: none; }
+      .doc-main { max-width: 100%; padding: 0; }
+      section { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+    }
+
+    @media (max-width: 860px) {
+      .doc-layout { flex-direction: column; }
+      .doc-sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--surface-border); }
+      .doc-main { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-layout">
+    <!-- Sidebar -->
+    <aside class="doc-sidebar">
+      <div class="doc-brand">
+        <img src="../assets/images/logo.svg" alt="MJTech Logo">
+        <div>
+          <h2>MJTech Docs</h2>
+          <small style="color:var(--text-muted)">Interview & Technical Kit</small>
+        </div>
+      </div>
+      <div class="nav-group-title">Interview Essentials</div>
+      <ul class="nav-links">
+        <li><a href="#pitch">🎯 Elevator Pitch</a></li>
+        <li><a href="#techstack">🛠️ Tech Stack & Rationale</a></li>
+        <li><a href="#architecture">🏛️ System Architecture</a></li>
+      </ul>
+      <div class="nav-group-title">Deep Technical Details</div>
+      <ul class="nav-links">
+        <li><a href="#algorithms">⚙️ Core Algorithms & Math</a></li>
+        <li><a href="#features">📱 Features & Logic</a></li>
+        <li><a href="#privacy">🔒 Privacy & Security</a></li>
+      </ul>
+      <div class="nav-group-title">Preparation & Q&A</div>
+      <ul class="nav-links">
+        <li><a href="#questions">💬 Top 20 Interview Q&A</a></li>
+        <li><a href="#walkthrough">📋 Live Demo Script</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="doc-main">
+      <header class="doc-header">
+        <div>
+          <span class="badge">Comprehensive Interview Package</span>
+          <h1>MJTech Platform Documentation</h1>
+          <p class="subtitle">Complete technical walkthrough, architecture, algorithms, and interview question repository.</p>
+        </div>
+        <button class="btn-print" onclick="window.print()">
+          <span>🖨️ Print / Save as PDF</span>
+        </button>
+      </header>
+
+      <!-- SECTION 1: ELEVATOR PITCH -->
+      <section id="pitch">
+        <h2>🎯 Elevator Pitch (प्रोजेक्ट का परिचय)</h2>
+        <div class="callout success">
+          <strong>Formal English Pitch for Interview:</strong>
+          "MJTech is an evidence-informed wellness research platform and interactive health utility suite that I engineered from the ground up. I opted for a 100% zero-dependency, client-side architecture using Semantic HTML5, modern CSS3, and Vanilla JavaScript (ES6+). It features four custom client-side tools—such as a circular modulo circadian sleep window estimator and a multi-factor hydration heuristic—along with a dynamic, searchable 12-guide research library. By processing all logic strictly in browser RAM without a database, the platform guarantees complete user data privacy and achieves near-instantaneous 100/100 Lighthouse performance."
+        </div>
+        <div class="callout">
+          <strong>Quick Hinglish Explanation (सरल शब्दों में):</strong>
+          "MJTech ek wellness platform hai jisme maine 4 interactive health tools aur ek live searchable 12-guide research library banayi hai. Isme user apna sleep window calculate kar sakta hai, body weight ke according hydration nikal sakta hai, aur doctor visit ke liye checklist bana sakta hai. Maine ise pure Vanilla JavaScript, Semantic HTML5 aur Modern CSS se banaya hai taaki website lightning-fast load ho aur user ka data 100% private rahe."
+        </div>
+      </section>
+
+      <!-- SECTION 2: TECH STACK -->
+      <section id="techstack">
+        <h2>🛠️ Complete Tech Stack & Rationale</h2>
+        <p>Interviewer ko batayein ki aapne har technology ko kisi specific solid reason se chuna hai:</p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Technology</th>
+                <th>Role in MJTech</th>
+                <th>Why Chosen over Alternatives</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Semantic HTML5</strong></td>
+                <td>6 Pages Structure</td>
+                <td>Clean DOM hierarchy, native accessibility (WCAG AA), SEO meta tags, skip-links for screen readers.</td>
+              </tr>
+              <tr>
+                <td><strong>Modern CSS3</strong></td>
+                <td>Design System & Layouts</td>
+                <td>Custom properties (`:root` variables), CSS Grid (responsive card columns), Flexbox, backdrop-filter blur. Zero bulky framework dependencies.</td>
+              </tr>
+              <tr>
+                <td><strong>Vanilla JavaScript (ES6+)</strong></td>
+                <td>Interactive Engine</td>
+                <td>0ms build overhead, 0KB runtime bundle, direct DOM manipulation, high event-driven efficiency.</td>
+              </tr>
+              <tr>
+                <td><strong>SVG Vector</strong></td>
+                <td>Brand Identity (logo.svg)</td>
+                <td>Infinitely scalable, crisp vector geometry with linear gradients under 500 bytes.</td>
+              </tr>
+              <tr>
+                <td><strong>Web APIs</strong></td>
+                <td>URL & Clipboard APIs</td>
+                <td>`URLSearchParams` for parameter-driven routing, `navigator.clipboard` for seamless list copying.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 3: SYSTEM ARCHITECTURE -->
+      <section id="architecture">
+        <h2>🏛️ System Architecture & File Structure</h2>
+        <p>The codebase adheres to a modular multi-page static architecture:</p>
+        <pre><code>MJTech/
+├── index.html                 # Landing page & Vitality Reflection Quiz
+├── pages/
+│   ├── tools.html             # 4 In-browser Wellness Tools
+│   ├── guides.html            # Searchable 12-guide library
+│   ├── guide.html             # Parameter-driven single guide reader (?id=...)
+│   ├── about.html             # Editorial standards & sourcing policies
+│   └── contact.html           # Client-validated editorial feedback form
+├── assets/
+│   ├── css/styles.css         # Unified Design System (CSS variables, layout grids)
+│   ├── js/
+│   │   ├── main.js            # Mobile drawer navigation & year injection
+│   │   ├── home.js            # Vitality reflection quiz logic
+│   │   ├── tools.js           # Algorithmic calculators (Sleep, Hydration, Planner)
+│   │   ├── guides.js          # In-memory guide store, search & filter engine
+│   │   └── contact.js         # Client-side validation & mailto formatting
+│   └── images/logo.svg        # Custom geometric monogram logo
+└── documentation/             # Complete interview and technical guides</code></pre>
+      </section>
+
+      <!-- SECTION 4: CORE ALGORITHMS -->
+      <section id="algorithms">
+        <h2>⚙️ Core Algorithms & Mathematics</h2>
+
+        <h3>1. Circadian Sleep Window Calculation (Modulo 1440)</h3>
+        <p>Calculating bedtime backward from a wake time often wraps around midnight into the previous calendar day. We solve this using circular modulo arithmetic:</p>
+        <pre><code>const [h, m] = wake.split(":").map(Number);
+// Total minutes backward from midnight
+const totalMinutes = h * 60 + m - (hours * 60) - fall;
+
+// Modulo 1440 handles previous-day rollover cleanly
+const normalized = ((totalMinutes % 1440) + 1440) % 1440;
+const hh = String(Math.floor(normalized / 60)).padStart(2, "0");
+const mm = String(normalized % 60).padStart(2, "0");</code></pre>
+
+        <h3>2. Multi-Factor Hydration Planner Formula</h3>
+        <p>Combines body weight, activity, and climate adjustments, then accounts for the 20% water intake supplied by solid foods:</p>
+        <pre><code>let ml = kg * 35; // 35 mL per kg base
+if (activity === "moderate") ml += 350;
+if (activity === "high") ml += 700;
+if (climate === "hot") ml += 500;
+
+const drinkMl = ml * 0.8; // 80% from direct beverages
+const low = Math.round((drinkMl * 0.9) / 29.5735);  // Convert to fl oz (-10%)
+const high = Math.round((drinkMl * 1.1) / 29.5735); // Convert to fl oz (+10%)</code></pre>
+
+        <h3>3. Dynamic Dual-Condition Filter Engine</h3>
+        <pre><code>function apply() {
+  const q = (search && search.value ? search.value : "").toLowerCase().trim();
+  const items = GUIDES.filter(function (guide) {
+    const catOk = active === "all" || guide.category === active;
+    const text = (guide.title + " " + guide.summary).toLowerCase();
+    return catOk && (!q || text.indexOf(q) !== -1);
+  });
+  renderCards(items);
+}</code></pre>
+      </section>
+
+      <!-- SECTION 5: PRIVACY & SECURITY -->
+      <section id="privacy">
+        <h2>🔒 Privacy by Design & Security Safeguards</h2>
+        <ul>
+          <li><strong>Zero Remote Transmission:</strong> Form submissions are handled via <code>event.preventDefault()</code>; inputs are never dispatched to a remote server.</li>
+          <li><strong>RAM-Only Computation:</strong> Calculations occur purely in volatile memory. No cookies or localStorage persist user health answers.</li>
+          <li><strong>XSS Prevention:</strong> Any user-provided note strings are sanitized with character entity encoding (<code>notes.replace(/&lt;/g, "&amp;lt;")</code>) before DOM rendering.</li>
+          <li><strong>No External Trackers:</strong> Zero third-party telemetry, ad beacons, or analytics scripts.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 6: INTERVIEW QUESTIONS -->
+      <section id="questions">
+        <h2>💬 Top Interview Questions & Answers</h2>
+
+        <div class="qa-card">
+          <div class="qa-header">Q1: Why choose Vanilla JS instead of React or Vue?</div>
+          <div class="qa-body">
+            <strong>Answer:</strong> "For this informational platform, React's virtual DOM and 150KB runtime bundle add unnecessary latency and build complexity. Vanilla JS gives us instantaneous first-contentful-paint (&lt;200ms), 100/100 Lighthouse score, and demonstrates deep mastery of core browser APIs like <code>URLSearchParams</code>, DOM manipulation, and asynchronous Clipboard integration."
+          </div>
+        </div>
+
+        <div class="qa-card">
+          <div class="qa-header">Q2: How does dynamic routing work on guide.html?</div>
+          <div class="qa-body">
+            <strong>Answer:</strong> "Instead of 12 static HTML files, <code>guide.html</code> acts as a single dynamic reader. It parses <code>window.location.search</code> using <code>new URLSearchParams()</code> to retrieve the guide ID, queries our in-memory JavaScript dataset, dynamically renders the title, lede, body, and sources, and includes a safe fallback if an invalid ID is provided."
+          </div>
+        </div>
+
+        <div class="qa-card">
+          <div class="qa-header">Q3: How did you ensure responsiveness without Bootstrap or Tailwind?</div>
+          <div class="qa-body">
+            <strong>Answer:</strong> "I constructed a bespoke CSS system utilizing CSS Custom Properties for design tokens, CSS Grid with fractional units for card decks and footers, Flexbox for navigation, and mobile media queries at 768px and 980px. I also built a mobile navigation drawer with full ARIA accessibility."
+          </div>
+        </div>
+
+        <div class="qa-card">
+          <div class="qa-header">Q4: What future enhancements would you build in v2?</div>
+          <div class="qa-body">
+            <strong>Answer:</strong> "I would introduce PWA offline caching via a Service Worker, an imperial/metric unit toggle for hydration, client-side PDF checklist export, and a dark/light theme switch powered by CSS variables."
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 7: LIVE WALKTHROUGH -->
+      <section id="walkthrough">
+        <h2>📋 Live Interview Walkthrough Script</h2>
+        <ol style="margin-left: 1.5rem; line-height: 2;">
+          <li><strong>Start at index.html:</strong> Highlight typography, sticky header with backdrop blur, and the instant DOM reactivity of the Vitality Reflection quiz.</li>
+          <li><strong>Show tools.html:</strong> Demonstrate the Circadian Sleep Window calculation (e.g. 6:30 AM wake -> 10:15 PM bedtime), Hydration target, and the 'Copy list' clipboard button.</li>
+          <li><strong>Show guides.html:</strong> Demonstrate real-time category filtering and live text search over the 12-guide library. Click any guide to show dynamic URL query routing in action.</li>
+          <li><strong>Show Mobile Responsiveness:</strong> Open Chrome DevTools (`F12`), toggle device toolbar, and demonstrate the hamburger menu drawer.</li>
+        </ol>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
