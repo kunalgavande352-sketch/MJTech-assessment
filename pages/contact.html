@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | MJTech</title>
+  <link rel="icon" href="../assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><img src="../assets/images/logo.svg" alt="MJTech Logo"> MJTech</a>
+      <nav class="nav-primary" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="tools.html">Wellness Tools</a>
+        <a href="guides.html">Health Guides</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-primary btn-sm" href="tools.html">Explore Tools</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav wrap" data-mobile-nav aria-label="Mobile">
+      <a href="../index.html">Home</a>
+      <a href="tools.html">Wellness Tools</a>
+      <a href="guides.html">Health Guides</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap page-hero-grid">
+        <div>
+          <h1>Contact the editors</h1>
+          <p class="lede">Send a correction, a source worth considering, feedback on a guide, or a general question about the site.</p>
+          <p><a href="mailto:support@mjtech.com">support@mjtech.com</a></p>
+        </div>
+        <div class="notice">
+            <h3>In an emergency</h3>
+            <p>MJTech does not provide emergency response or individualized medical care. If you think you are having a medical emergency, call 911.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split">
+        <form class="tool-panel" id="contact-form">
+          <h2>Send a message</h2>
+          <p>Please do not include Social Security numbers, insurance IDs, or payment details.</p>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" required>
+          </div>
+          <div class="field" style="margin-top:0.8rem">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="field" style="margin-top:0.8rem">
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic" required>
+              <option value="">Select…</option>
+              <option>Correction</option>
+              <option>Source suggestion</option>
+              <option>Guide feedback</option>
+              <option>Tools</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field" style="margin-top:0.8rem">
+            <label for="message">Message</label>
+            <textarea id="message" required></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Send message</button>
+          </div>
+          <div class="result" id="contact-result"></div>
+        </form>
+        <div>
+          <h2>How to send a useful correction</h2>
+          <div class="steps">
+            <div class="step"><div class="num">1</div><div><h3>Point to the passage</h3><p>Give the guide title or URL and quote the sentence in question.</p></div></div>
+            <div class="step"><div class="num">2</div><div><h3>Say what is wrong</h3><p>Explain the error, outdated figure, or missing context.</p></div></div>
+            <div class="step"><div class="num">3</div><div><h3>Include a source</h3><p>A link to a government page, guideline, or peer-reviewed study is ideal.</p></div></div>
+            <div class="step"><div class="num">4</div><div><h3>Leave out personal health details</h3><p>We only need the information, not your medical history.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="../index.html"><img src="../assets/images/logo.svg" alt="MJTech Logo"> MJTech</a>
+        <p>An independent wellness research publication offering general health information and simple tools for readers in the United States.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="tools.html">Wellness Tools</a></li>
+          <li><a href="guides.html">Health Guides</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Standards</h2>
+        <ul>
+          <li><a href="about.html#sourcing">Editorial standards</a></li>
+          <li><a href="about.html#corrections">Corrections and updates</a></li>
+          <li><a href="contact.html">Contact the editors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Reader support</h2>
+        <p>Questions, corrections, or source suggestions:</p>
+        <p><a href="mailto:support@mjtech.com">support@mjtech.com</a></p>
+        <p>Based in the United States. Reader mail is answered within two business days.</p>
+      </div>
+    </div>
+    <div class="wrap copyright">© <span data-year></span> MJTech. All rights reserved.</div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/contact.js"></script>
+</body>
+</html>

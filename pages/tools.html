@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wellness Tools | MJTech</title>
+  <link rel="icon" href="../assets/images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><img src="../assets/images/logo.svg" alt="MJTech Logo"> MJTech</a>
+      <nav class="nav-primary" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="tools.html" aria-current="page">Wellness Tools</a>
+        <a href="guides.html">Health Guides</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-primary btn-sm" href="tools.html">Explore Tools</a>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav wrap" data-mobile-nav aria-label="Mobile">
+      <a href="../index.html">Home</a>
+      <a href="tools.html">Wellness Tools</a>
+      <a href="guides.html">Health Guides</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap page-hero-grid">
+        <div>
+          <p class="eyebrow">Your toolkit</p>
+          <h1>Wellness Tools</h1>
+          <p class="lede">Four simple utilities for thinking through sleep timing, hydration, metabolic habits, and appointment preparation. They show their assumptions, run in your browser, and save nothing.</p>
+          <p class="notice">General estimates and reflections only. Not a diagnosis or personal medical advice.</p>
+        </div>
+        <div class="stat-box">
+          <h3>Jump to a tool</h3>
+          <ul>
+            <li><a href="#metabolic">Metabolic health reflection</a></li>
+            <li><a href="#sleep">Circadian sleep window</a></li>
+            <li><a href="#hydration">Hydration planner</a></li>
+            <li><a href="#planner">Preventive habit planner</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <article class="tool-panel" id="metabolic">
+          <h2>Metabolic health reflection</h2>
+          <p>This is a structured reflection, not a validated index and not a risk score. It never predicts diabetes, heart disease, or any other condition.</p>
+          <form id="metabolic-form">
+            <div class="form-grid">
+              <div class="field">
+                <label for="age">Age range</label>
+                <select id="age" name="age" required>
+                  <option value="18-39">18–39</option>
+                  <option value="40-49">40–49</option>
+                  <option value="50plus">50 or older</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="activity">Weekly moderate activity</label>
+                <select id="activity" name="activity" required>
+                  <option value="low">Rarely</option>
+                  <option value="mid">Some days</option>
+                  <option value="high">Most days</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="sitting">Long sitting spells</label>
+                <select id="sitting" name="sitting" required>
+                  <option value="low">Mostly broken up</option>
+                  <option value="high">Most of the day</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="msleep">Typical sleep</label>
+                <select id="msleep" name="msleep" required>
+                  <option value="short">Under 7 hours</option>
+                  <option value="ok">7–9 hours</option>
+                  <option value="long">Over 9 hours or very irregular</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="strength">Strength work</label>
+                <select id="strength" name="strength" required>
+                  <option value="rare">Rarely</option>
+                  <option value="some">About weekly</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="checks">Recent lab or blood-pressure checks</label>
+                <select id="checks" name="checks" required>
+                  <option value="recent">Within two years</option>
+                  <option value="unsure">Unsure or overdue</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="bp">Optional recent blood-pressure reading</label>
+                <input id="bp" name="bp" placeholder="e.g. 118/76 — skip if you do not have one">
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Build my reflection</button>
+            </div>
+          </form>
+          <div class="result" id="metabolic-result"></div>
+        </article>
+
+        <article class="tool-panel" id="sleep" style="margin-top:1.2rem">
+          <h2>Circadian sleep window estimator</h2>
+          <p>Enter when you need to wake up and how long you want to sleep. The tool works backward to a bedtime, including when it falls after midnight.</p>
+          <form id="sleep-form">
+            <div class="form-grid">
+              <div class="field">
+                <label for="wake-time">Wake-up time</label>
+                <input id="wake-time" type="time" value="06:30" required>
+              </div>
+              <div class="field">
+                <label for="sleep-hours">Sleep duration (hours)</label>
+                <input id="sleep-hours" type="number" min="4" max="12" step="0.5" value="8" required>
+              </div>
+              <div class="field">
+                <label for="fall-asleep">Time to fall asleep (minutes)</label>
+                <input id="fall-asleep" type="number" min="0" max="120" value="15" required>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Estimate bedtime</button>
+            </div>
+          </form>
+          <div class="result" id="sleep-result"></div>
+        </article>
+
+        <article class="tool-panel" id="hydration" style="margin-top:1.2rem">
+          <h2>Hydration planner</h2>
+          <p>A rough planning range based on body weight, activity, and climate. You can then edit the result. If a clinician has told you to limit fluids, do not use this tool to change your intake.</p>
+          <form id="hydration-form">
+            <div class="form-grid">
+              <div class="field">
+                <label for="weight-kg">Body weight (kg)</label>
+                <input id="weight-kg" type="number" min="30" max="250" step="0.5" required>
+              </div>
+              <div class="field">
+                <label for="hydro-activity">Activity</label>
+                <select id="hydro-activity">
+                  <option value="light">Light</option>
+                  <option value="moderate">Moderate</option>
+                  <option value="high">High / sweaty</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="climate">Climate</label>
+                <select id="climate">
+                  <option value="temperate">Temperate</option>
+                  <option value="hot">Hot</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="custom-oz">Adjust your own target (fl oz)</label>
+                <input id="custom-oz" type="number" min="20" max="200">
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">See planning range</button>
+            </div>
+          </form>
+          <div class="result" id="hydration-result"></div>
+        </article>
+
+        <article class="tool-panel" id="planner" style="margin-top:1.2rem">
+          <h2>Preventive habit planner</h2>
+          <p>Pick topics for a routine wellness appointment. The tool builds a list of things to bring and questions to ask. Avoid typing sensitive personal details.</p>
+          <form id="planner-form">
+            <div class="topic-toggles">
+              <label><input type="checkbox" name="topic" value="sleep"> Sleep and energy</label>
+              <label><input type="checkbox" name="topic" value="activity"> Physical activity</label>
+              <label><input type="checkbox" name="topic" value="eating"> Eating patterns</label>
+              <label><input type="checkbox" name="topic" value="screenings"> Screenings and vaccines</label>
+              <label><input type="checkbox" name="topic" value="pressure"> Blood pressure</label>
+              <label><input type="checkbox" name="topic" value="labs"> Blood sugar and cholesterol</label>
+              <label><input type="checkbox" name="topic" value="mood"> Stress and mood</label>
+              <label><input type="checkbox" name="topic" value="meds"> Medications and supplements</label>
+            </div>
+            <div class="field" style="margin-top:1rem">
+              <label for="planner-notes">Optional note (no medical identifiers)</label>
+              <textarea id="planner-notes" placeholder="Questions you already want to remember…"></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Build checklist</button>
+              <button class="btn btn-ghost" type="button" id="copy-plan">Copy list</button>
+            </div>
+          </form>
+          <div class="result" id="planner-result"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="../index.html"><img src="../assets/images/logo.svg" alt="MJTech Logo"> MJTech</a>
+        <p>An independent wellness research publication offering general health information and simple tools for readers in the United States.</p>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="tools.html">Wellness Tools</a></li>
+          <li><a href="guides.html">Health Guides</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Standards</h2>
+        <ul>
+          <li><a href="about.html#sourcing">Editorial standards</a></li>
+          <li><a href="about.html#corrections">Corrections and updates</a></li>
+          <li><a href="contact.html">Contact the editors</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Reader support</h2>
+        <p>Questions, corrections, or source suggestions:</p>
+        <p><a href="mailto:support@mjtech.com">support@mjtech.com</a></p>
+        <p>Based in the United States. Reader mail is answered within two business days.</p>
+      </div>
+    </div>
+    <div class="wrap copyright">© <span data-year></span> MJTech. General information only.</div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/tools.js"></script>
+</body>
+</html>
