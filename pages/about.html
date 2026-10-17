@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About and Editorial Standards | MJTech</title>
+  <title>About &amp; Editorial Standards | MJTech</title>
+  <meta name="description" content="Learn about MJTech's commitment to transparent, sourced wellness research, independent tools, and evidence-based standards.">
   <link rel="icon" href="../assets/images/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.svg" alt="MJTech Logo"> MJTech</a>
-      <nav class="nav-primary" aria-label="Primary">
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/logo.svg" alt="MJTech Logo" width="38" height="38">
+        <span>MJTech</span>
+      </a>
+      <nav class="nav-primary" aria-label="Primary Navigation">
         <a href="../index.html">Home</a>
         <a href="tools.html">Wellness Tools</a>
         <a href="guides.html">Health Guides</a>
@@ -24,14 +28,16 @@
       </nav>
       <div class="header-cta">
         <a class="btn btn-primary btn-sm" href="tools.html">Explore Tools</a>
-        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-    <nav class="mobile-nav wrap" data-mobile-nav aria-label="Mobile">
+    <nav class="mobile-nav wrap" data-mobile-nav aria-label="Mobile Navigation">
       <a href="../index.html">Home</a>
       <a href="tools.html">Wellness Tools</a>
       <a href="guides.html">Health Guides</a>
-      <a href="about.html">About</a>
+      <a href="about.html" aria-current="page">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -40,17 +46,27 @@
     <section class="page-hero">
       <div class="wrap page-hero-grid">
         <div>
+          <span class="eyebrow">Our Mission &amp; Ethics</span>
           <h1>About MJTech</h1>
-          <p class="lede">A wellness research publication built on a simple standard: say what the sources say, show where they come from, and be clear about what is still uncertain.</p>
+          <p class="lede">An independent digital wellness research platform built on a clear standard: say what authoritative sources say, cite where figures originate, and be completely explicit about clinical uncertainty.</p>
         </div>
         <div class="photo-frame">
-          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80" alt="Person writing notes at a wooden desk">
+          <img src="../assets/images/about-research.jpg" alt="Health researcher examining peer-reviewed literature" loading="lazy">
           <aside class="float-card">
-            <h4>Source check</h4>
+            <h4>Editorial Rigor</h4>
             <ul>
-              <li>✓ Primary source located</li>
-              <li>✓ Figures compared</li>
-              <li>✓ Limits stated</li>
+              <li>
+                <svg class="icon" style="width:14px;height:14px;color:var(--emerald)" viewBox="0 0 24 24"><path d="m9 12 2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                Primary source verified
+              </li>
+              <li>
+                <svg class="icon" style="width:14px;height:14px;color:var(--emerald)" viewBox="0 0 24 24"><path d="m9 12 2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                Threshold figures cross-checked
+              </li>
+              <li>
+                <svg class="icon" style="width:14px;height:14px;color:var(--emerald)" viewBox="0 0 24 24"><path d="m9 12 2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+                Study limitations declared
+              </li>
             </ul>
           </aside>
         </div>
@@ -60,34 +76,58 @@
     <section class="section">
       <div class="wrap article">
         <h2>Our editorial purpose</h2>
-        <p>MJTech exists to make general health information easier to understand. We write about sleep, circadian timing, metabolic health, hydration, and healthy longevity, and we build simple tools that help readers think through everyday decisions.</p>
-        <p>We are not a clinic, hospital, pharmacy, or medical provider. Our job is to explain, not to diagnose or treat.</p>
+        <p>MJTech was created to make health science comprehensible and actionable for everyday life. We examine circadian biology, metabolic biomarkers, daily physical habits, and healthy longevity. Alongside our briefs, we build transparent browser calculators to help readers explore routines and prepare for doctor visits.</p>
+        <p>We are not a clinic, diagnostic laboratory, or telehealth provider. Our role is strictly educational: to translate peer-reviewed consensus and help you ask better questions with your licensed healthcare provider.</p>
       </div>
     </section>
 
     <section class="section section-muted" id="sourcing">
       <div class="wrap">
-        <h2>Research sourcing standards</h2>
-        <p>Sources are chosen in a rough order of reliability for general readers.</p>
-        <div class="grid-3" style="margin-top:1.2rem">
-          <article class="card"><h3>Government health agencies</h3><p>NIH institutes, CDC, NHLBI, MedlinePlus, and the FDA when relevant.</p></article>
-          <article class="card"><h3>Established clinical guidance</h3><p>Recognized professional organizations such as the American Heart Association and the American Academy of Sleep Medicine.</p></article>
-          <article class="card"><h3>Peer-reviewed research</h3><p>Used sparingly, with the study type and its limits described.</p></article>
+        <div class="section-head">
+          <span class="eyebrow">Evidence Hierarchy</span>
+          <h2>Research sourcing standards</h2>
+          <p>We evaluate health literature according to strict clinical credibility standards.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon-badge teal">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Public Health Agencies</h3>
+            <p>We reference guidance published by the CDC, NIH Institutes (NIGMS, NHLBI, NIA), MedlinePlus, and the FDA.</p>
+            <span class="meta">Highest consensus benchmark</span>
+          </article>
+          <article class="card">
+            <div class="icon-badge indigo">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <h3>Clinical Medical Societies</h3>
+            <p>Peer-reviewed clinical recommendations from recognized bodies including the American Heart Association and Sleep Research Society.</p>
+            <span class="meta">Specialist clinical guidance</span>
+          </article>
+          <article class="card">
+            <div class="icon-badge amber">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3>Peer-Reviewed Trials</h3>
+            <p>Controlled human intervention trials, clearly categorized so readers never confuse observational correlation with clinical cause.</p>
+            <span class="meta">Contextualized research</span>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="corrections">
       <div class="wrap article">
-        <h2>Corrections and updates</h2>
-        <p>If you spot an error, an outdated figure, or a broken source, send it through the <a href="contact.html">Contact</a> page or email support@mjtech.com.</p>
-        <p>We check the point against the cited source and, where needed, against newer guidance. When evidence changes, the affected guide is reviewed and revised.</p>
-        <h2>What we do not claim</h2>
+        <h2>Corrections and scholarly review</h2>
+        <p>If you discover an outdated number, a broken link, or an emerging clinical update that affects our guides, please notify our editorial desk through our <a href="contact.html" style="color:var(--primary);text-decoration:underline;">contact form</a> or directly at <a href="mailto:support@mjtech.com" style="color:var(--primary);text-decoration:underline;">support@mjtech.com</a>.</p>
+        <p>All corrections are investigated against primary literature. When new medical guidelines are approved by major organizations, relevant guides are promptly updated with revision notices.</p>
+        
+        <h2 style="margin-top:2.5rem">Ethical transparency</h2>
         <ul>
-          <li>We do not claim to employ physicians or other licensed clinicians.</li>
-          <li>We do not operate a medical review board.</li>
-          <li>We do not hold health certifications or accreditations.</li>
-          <li>We do not claim institutional affiliations or endorsements.</li>
+          <li>We do not accept paid placements, sponsored clinical ratings, or affiliate commissions on health supplements.</li>
+          <li>We do not claim licensed clinicians on staff or institutional endorsements.</li>
+          <li>Our calculators run entirely locally in your browser to respect your total privacy.</li>
         </ul>
       </div>
     </section>
@@ -95,9 +135,12 @@
 
   <footer class="site-footer">
     <div class="wrap footer-grid">
-      <div>
-        <a class="brand" href="../index.html"><img src="../assets/images/logo.svg" alt="MJTech Logo"> MJTech</a>
-        <p>An independent wellness research publication offering general health information and simple tools for readers in the United States.</p>
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <img src="../assets/images/logo.svg" alt="MJTech Logo" width="36" height="36">
+          <span>MJTech</span>
+        </a>
+        <p>An independent digital wellness research platform providing evidence-informed health briefs and client-side calculators for thoughtful everyday choices.</p>
       </div>
       <div>
         <h2>Explore</h2>
@@ -105,27 +148,30 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="tools.html">Wellness Tools</a></li>
           <li><a href="guides.html">Health Guides</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">About MJTech</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <h2>Standards</h2>
         <ul>
-          <li><a href="about.html#sourcing">Editorial standards</a></li>
-          <li><a href="about.html#corrections">Corrections and updates</a></li>
-          <li><a href="contact.html">Contact the editors</a></li>
+          <li><a href="about.html#sourcing">Editorial Standards</a></li>
+          <li><a href="about.html#corrections">Corrections Policy</a></li>
+          <li><a href="contact.html">Reader Feedback</a></li>
         </ul>
       </div>
       <div>
-        <h2>Reader support</h2>
-        <p>Questions, corrections, or source suggestions:</p>
-        <p><a href="mailto:support@mjtech.com">support@mjtech.com</a></p>
-        <p>Based in the United States. Reader mail is answered within two business days.</p>
+        <h2>Reader Support</h2>
+        <p style="font-size:0.92rem;margin-bottom:0.5rem">Inquiries, corrections &amp; research suggestions:</p>
+        <p><a href="mailto:support@mjtech.com" style="font-weight:600;color:var(--primary)">support@mjtech.com</a></p>
+        <p class="fine-print" style="margin-top:0.6rem">Reader mail responded to within two business days.</p>
       </div>
     </div>
-    <div class="wrap copyright">© <span data-year></span> MJTech. All rights reserved.</div>
+    <div class="wrap copyright">
+      © <span data-year></span> MJTech. All rights reserved. Sourced health education — not medical diagnosis.
+    </div>
   </footer>
+
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

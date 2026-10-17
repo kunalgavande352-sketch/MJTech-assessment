@@ -1,9 +1,9 @@
 # MJTech — Interview Quick Revision Sheet (Q&A Cheat Sheet)
-*(इंटरव्यू से 10 मिनट पहले रिवीज़न करने के लिए बेस्ट नोट्स)*
+
 
 ---
 
-## ⚡ Quick Project Facts (फैक्ट्स जो आपको याद होने चाहिए)
+## ⚡ Quick Project Facts 
 
 - **Project Name**: MJTech (Wellness Research & Interactive Health Utilities)
 - **Architecture**: Multi-Page Application (MPA), 100% Client-Side, Zero-Build

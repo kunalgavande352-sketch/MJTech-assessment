@@ -1,9 +1,9 @@
 # MJTech — Complete Project & Interview Master Guide
-*(इंटरव्यू में पूछे जाने वाले सभी सवालों, टेक्निकल आर्किटेक्चर और कोडिंग डीटेल्स का सम्पूर्ण गाइड)*
+
 
 ---
 
-## 📌 Executive Summary (प्रोजेक्ट का संक्षिप्त परिचय)
+## 📌 Executive Summary 
 
 **MJTech** ek modern, privacy-focused wellness research aur client-side interactive health tools platform hai. Is platform ka primary purpose users ko scientifically sourced, evidence-informed health information provide karna hai (circadian rhythms, sleep timing, metabolic markers, hydration planning, aur preventive habits) bina kisi exaggerated claims ya medical diagnosis ke.
 
@@ -11,7 +11,7 @@ Sabse khaas baat yeh hai ki **yeh 100% Client-Side Architecture par bana hai** �
 
 ---
 
-## 🎤 Interview Elevator Pitch (इंटरव्यू में प्रोजेक्ट को कैसे समझाएं)
+## 🎤 Interview Elevator Pitch 
 
 Jab interviewer aapse puche: **"Can you tell me about this project and what problem it solves?"**
 

@@ -182,16 +182,26 @@
     return "Longevity & Healthy Habits";
   }
 
+  function getCategoryBadge(cat) {
+    if (cat === "sleep") {
+      return '<div class="icon-badge indigo"><svg class="icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></div>';
+    }
+    if (cat === "metabolic") {
+      return '<div class="icon-badge rose"><svg class="icon" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>';
+    }
+    return '<div class="icon-badge teal"><svg class="icon" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"></path></svg></div>';
+  }
+
   function renderCards(items) {
     if (!list) return;
     list.innerHTML = items
       .map(function (guide) {
         return (
           '<a class="card" href="guide.html?id=' + guide.id + '">' +
-          '<div class="icon-badge">◎</div>' +
+          getCategoryBadge(guide.category) +
           "<h3>" + guide.title + "</h3>" +
           "<p>" + guide.summary + "</p>" +
-          '<p class="meta">' + categoryLabel(guide.category) + " · " + guide.minutes + " min read</p>" +
+          '<div class="meta"><span>' + categoryLabel(guide.category) + '</span><span>' + guide.minutes + ' min read →</span></div>' +
           "</a>"
         );
       })

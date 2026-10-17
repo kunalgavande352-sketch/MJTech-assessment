@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Health Guides | MJTech</title>
+  <title>Evidence-Based Health Guides | MJTech</title>
+  <meta name="description" content="Explore peer-referenced research briefs on sleep timing, circadian rhythm, metabolic biomarkers, and healthy longevity.">
   <link rel="icon" href="../assets/images/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="../index.html"><img src="../assets/images/logo.svg" alt="MJTech Logo"> MJTech</a>
-      <nav class="nav-primary" aria-label="Primary">
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/logo.svg" alt="MJTech Logo" width="38" height="38">
+        <span>MJTech</span>
+      </a>
+      <nav class="nav-primary" aria-label="Primary Navigation">
         <a href="../index.html">Home</a>
         <a href="tools.html">Wellness Tools</a>
         <a href="guides.html" aria-current="page">Health Guides</a>
@@ -24,13 +28,15 @@
       </nav>
       <div class="header-cta">
         <a class="btn btn-primary btn-sm" href="tools.html">Explore Tools</a>
-        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-    <nav class="mobile-nav wrap" data-mobile-nav aria-label="Mobile">
+    <nav class="mobile-nav wrap" data-mobile-nav aria-label="Mobile Navigation">
       <a href="../index.html">Home</a>
       <a href="tools.html">Wellness Tools</a>
-      <a href="guides.html">Health Guides</a>
+      <a href="guides.html" aria-current="page">Health Guides</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -40,16 +46,25 @@
     <section class="page-hero">
       <div class="wrap page-hero-grid">
         <div>
-          <p class="eyebrow">Research index</p>
+          <span class="eyebrow">Research Library</span>
           <h1>Health Guides</h1>
-          <p class="lede">Twelve original guides on circadian timing, metabolic health, and longevity science. Each one lists sources and says where the evidence is limited.</p>
+          <p class="lede">Twelve original, evidence-referenced guides analyzing circadian biology, metabolic markers, and longevity research. Each guide details its primary citations and states the limits of existing studies.</p>
         </div>
         <div class="stat-box">
           <h3>In this library</h3>
           <ul>
-            <li>Sleep &amp; Circadian Science: 4 guides</li>
-            <li>Metabolic &amp; Preventive Health: 4 guides</li>
-            <li>Longevity &amp; Healthy Habits: 4 guides</li>
+            <li>
+              <span>Sleep &amp; Circadian Science</span>
+              <span class="trust-badge" style="padding:0.15rem 0.6rem;">4 guides</span>
+            </li>
+            <li>
+              <span>Metabolic &amp; Preventive Health</span>
+              <span class="trust-badge" style="padding:0.15rem 0.6rem;">4 guides</span>
+            </li>
+            <li>
+              <span>Longevity &amp; Habit Design</span>
+              <span class="trust-badge" style="padding:0.15rem 0.6rem;">4 guides</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -57,40 +72,84 @@
 
     <section class="section">
       <div class="wrap">
-        <h2>Guide library</h2>
         <div class="search-row">
           <div class="field">
-            <label for="guide-search">Search guides</label>
-            <input id="guide-search" type="search" placeholder='Try “blood pressure” or “light”'>
+            <label for="guide-search">Search guides library</label>
+            <div style="position:relative;">
+              <input id="guide-search" type="search" placeholder='Search "blood pressure", "circadian", "habits"…' style="padding-left:2.5rem;width:100%;">
+              <svg class="icon" style="position:absolute;left:0.85rem;top:50%;transform:translateY(-50%);color:var(--muted);width:18px;height:18px;" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
           </div>
           <div>
-            <p>Filter by category</p>
+            <label style="display:block;margin-bottom:0.45rem;">Filter by category</label>
             <div class="filters">
               <button class="chip active" type="button" data-filter="all">All guides</button>
-              <button class="chip" type="button" data-filter="sleep">Sleep &amp; Circadian Science</button>
-              <button class="chip" type="button" data-filter="metabolic">Metabolic &amp; Preventive Health</button>
-              <button class="chip" type="button" data-filter="longevity">Longevity &amp; Healthy Habits</button>
+              <button class="chip" type="button" data-filter="sleep">Sleep &amp; Circadian</button>
+              <button class="chip" type="button" data-filter="metabolic">Metabolic Health</button>
+              <button class="chip" type="button" data-filter="longevity">Longevity &amp; Habits</button>
             </div>
           </div>
         </div>
-        <p id="guide-count" class="fine-print">Showing 12 of 12 guides</p>
+
+        <p id="guide-count" class="fine-print" style="margin-bottom:1.5rem;">Showing 12 of 12 guides</p>
+
+        <!-- Dynamic Guides Cards Grid -->
         <div class="cards" id="guide-list"></div>
-        <div class="card" id="guide-empty" hidden>
-          <h3>No guides match those filters</h3>
-          <p>Try a shorter keyword, check the spelling, or switch to a different category.</p>
+
+        <div class="card" id="guide-empty" style="text-align:center;padding:3rem 1.5rem;" hidden>
+          <div class="icon-badge amber" style="margin:0 auto 1rem;">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <h3>No matching guides found</h3>
+          <p>Try searching for a broader keyword or switch back to the "All guides" filter.</p>
         </div>
       </div>
     </section>
 
+    <!-- Scientific Literacy Section -->
     <section class="section section-muted">
       <div class="wrap">
-        <h2>Reading research without confusing association and causation</h2>
-        <p>When two things occur together, it does not mean one caused the other. Before changing a habit because of a headline, check what kind of study it came from.</p>
-        <div class="grid-4" style="margin-top:1.2rem">
-          <article class="card"><h3>Association</h3><p>Two things move together. Observational studies mostly show this.</p></article>
-          <article class="card"><h3>Confounding</h3><p>A third factor, such as income or exercise, may explain the link.</p></article>
-          <article class="card"><h3>Reverse causation</h3><p>Illness may change habits, instead of habits causing illness.</p></article>
-          <article class="card"><h3>Trials</h3><p>Randomized trials test cause more directly, within their limits.</p></article>
+        <div class="section-head">
+          <span class="eyebrow">Scientific Literacy</span>
+          <h2>Distinguishing correlation from clinical cause</h2>
+          <p>Headlines frequently sensationalize lifestyle studies. Understanding trial design helps you evaluate whether a finding applies to real life.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon-badge indigo">
+              <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <h3>Observational Link</h3>
+            <p>Two variables trend together across a population. This reveals potential patterns, but does not prove one caused the other.</p>
+            <span class="meta">Hypothesis generation</span>
+          </article>
+
+          <article class="card">
+            <div class="icon-badge rose">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+            </div>
+            <h3>Confounding Factors</h3>
+            <p>Underlying variables such as household income, leisure time, or sleep quality often explain the apparent benefit.</p>
+            <span class="meta">Hidden variables</span>
+          </article>
+
+          <article class="card">
+            <div class="icon-badge amber">
+              <svg class="icon" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            </div>
+            <h3>Reverse Causation</h3>
+            <p>Early asymptomatic disease may alter daily habits first, creating an illusion that the habit provoked the condition.</p>
+            <span class="meta">Direction of causality</span>
+          </article>
+
+          <article class="card">
+            <div class="icon-badge emerald">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h3>Randomized Trials</h3>
+            <p>Participants are randomly assigned an intervention, providing the gold standard for establishing true causality.</p>
+            <span class="meta">Highest evidentiary rigor</span>
+          </article>
         </div>
       </div>
     </section>
@@ -98,9 +157,12 @@
 
   <footer class="site-footer">
     <div class="wrap footer-grid">
-      <div>
-        <a class="brand" href="../index.html"><img src="../assets/images/logo.svg" alt="MJTech Logo"> MJTech</a>
-        <p>An independent wellness research publication offering general health information and simple tools for readers in the United States.</p>
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <img src="../assets/images/logo.svg" alt="MJTech Logo" width="36" height="36">
+          <span>MJTech</span>
+        </a>
+        <p>An independent digital wellness research platform providing evidence-informed health briefs and client-side calculators for thoughtful everyday choices.</p>
       </div>
       <div>
         <h2>Explore</h2>
@@ -108,27 +170,30 @@
           <li><a href="../index.html">Home</a></li>
           <li><a href="tools.html">Wellness Tools</a></li>
           <li><a href="guides.html">Health Guides</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">About MJTech</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div>
         <h2>Standards</h2>
         <ul>
-          <li><a href="about.html#sourcing">Editorial standards</a></li>
-          <li><a href="about.html#corrections">Corrections and updates</a></li>
-          <li><a href="contact.html">Contact the editors</a></li>
+          <li><a href="about.html#sourcing">Editorial Standards</a></li>
+          <li><a href="about.html#corrections">Corrections Policy</a></li>
+          <li><a href="contact.html">Reader Feedback</a></li>
         </ul>
       </div>
       <div>
-        <h2>Reader support</h2>
-        <p>Questions, corrections, or source suggestions:</p>
-        <p><a href="mailto:support@mjtech.com">support@mjtech.com</a></p>
-        <p>Based in the United States. Reader mail is answered within two business days.</p>
+        <h2>Reader Support</h2>
+        <p style="font-size:0.92rem;margin-bottom:0.5rem">Inquiries, corrections &amp; research suggestions:</p>
+        <p><a href="mailto:support@mjtech.com" style="font-weight:600;color:var(--primary)">support@mjtech.com</a></p>
+        <p class="fine-print" style="margin-top:0.6rem">Reader mail responded to within two business days.</p>
       </div>
     </div>
-    <div class="wrap copyright">© <span data-year></span> MJTech. All rights reserved.</div>
+    <div class="wrap copyright">
+      © <span data-year></span> MJTech. All rights reserved. Sourced health education — not medical diagnosis.
+    </div>
   </footer>
+
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/guides.js"></script>
 </body>
